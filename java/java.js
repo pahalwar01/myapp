@@ -14,3 +14,6 @@ signup_btn.onclick = function()
     login_box.style.display = "none";
     signup_box.style.display = "block";
 }
+
+// Time updater
+
