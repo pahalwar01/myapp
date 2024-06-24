@@ -15,8 +15,42 @@ signup_frm.onsubmit = function()
             localStorage.setItem(email,user_text_data);
             var signup_btn = document.getElementById("signup_btn");
             signup_btn.style.background = "#14b129";
-            signup_btn.innerHTML = "Signup Successful !😊";
+            signup_btn.innerHTML = "<i class='fa fa-check' aria-hidden='true'></i> Sign up Successful !😊";
+            setTimeout(function() {
+                signup_btn.style.background = "linear-gradient(to right, #E100FF, #7F00FF)";
+                signup_btn.innerHTML = "Sign up";
+                signup_frm.reset();
+            }, 3000);
             return false
         }
 
 }
+
+var email_input = document.getElementById("email");
+email_input.onchange = function()
+{
+    var email = document.getElementById("email").value;
+    var warning = document.getElementById("email_notice");
+    var signup_btn = document.getElementById("signup_btn");
+ 
+    if (localStorage.getItem(email) != null)
+        {
+            warning.style.display = "block";
+            email_input.style.borderBottomColor = "red";
+            signup_btn.disabled = true;
+            signup_btn.style.background = "#ccc";
+
+            email_input.onclick = function()
+            {
+                email_input.value = "";
+                email_input.style.borderBottomColor = "#ccc";
+                warning.style.display = "none";
+                signup_btn.disabled = false;
+                signup_btn.style.background = "linear-gradient(to right, #E100FF, #7F00FF)";
+
+            }
+
+        }
+
+}
+
