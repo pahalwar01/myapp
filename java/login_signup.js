@@ -13,6 +13,10 @@ signup_frm.onsubmit = function()
     if (user != "" && email != "" && phone != "" && pass !="")
         {
             localStorage.setItem(email,user_text_data);
+            var signup_btn = document.getElementById("signup_btn");
+            signup_btn.style.background = "#14b129";
+            signup_btn.innerHTML = "Signup Successful !😊";
+            return false
         }
 
 }
