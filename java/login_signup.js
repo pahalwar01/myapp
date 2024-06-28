@@ -79,6 +79,18 @@ login_frm.onsubmit = function()
             var object_data = JSON.parse(text_data);
             var correct_email = object_data.email;
             var correct_password = object_data.password;
+
+            if(email.value == correct_email)
+                {
+                    if(password.value == correct_password)
+                        {
+                            alert("Login Sucess")
+                        }
+                        else
+                        {
+                            alert("Password Wrong")
+                        }
+                }
         }
         return false;
 }
