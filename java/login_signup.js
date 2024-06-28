@@ -33,7 +33,7 @@ signup_frm.onsubmit = function()
 var email_input = document.getElementById("email");
 email_input.onchange = function()
 {
-    var email = document.getElementById("email").value;
+    var email = btoa(document.getElementById("email").value);
     var warning = document.getElementById("email_notice");
     var signup_btn = document.getElementById("signup_btn");
  
@@ -71,7 +71,7 @@ login_frm.onsubmit = function()
     var email_war = document.getElementById("email_warning");
     var pass_war = document.getElementById("password_warning");
 
-    if(localStorage.getItem(email.value) == null)
+    if(localStorage.getItem(btoa(email.value)) == null)
         {
             email_war.style.display = "block";
             email.style.borderBottomColor = "red";
@@ -85,14 +85,14 @@ login_frm.onsubmit = function()
         }
         else
         {
-            var text_data = localStorage.getItem(email.value);
+            var text_data = localStorage.getItem(btoa(email.value));
             var object_data = JSON.parse(text_data);
             var correct_email = object_data.email;
             var correct_password = object_data.password;
 
-            if(email.value == correct_email)
+            if(btoa(email.value) == correct_email)
                 {
-                    if(password.value == correct_password)
+                    if(btoa(password.value) == correct_password)
                         {
                             alert("login sucess");
                         }
