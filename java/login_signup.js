@@ -1,3 +1,5 @@
+// Signup coding start
+
 var signup_frm = document.getElementById("signup_frm");
 
 signup_frm.onsubmit = function()
@@ -25,7 +27,9 @@ signup_frm.onsubmit = function()
         }
 
 }
+//signup coding end
 
+// email validation coding start
 var email_input = document.getElementById("email");
 email_input.onchange = function()
 {
@@ -54,3 +58,27 @@ email_input.onchange = function()
 
 }
 
+// email validation coding end
+
+// login coding start
+
+var login_frm = document.getElementById("login_frm");
+
+login_frm.onsubmit = function()
+{
+    var email =document.getElementById("login_uname").value;
+    var password = document.getElementById("login_pwd").value;
+
+    if(localStorage.getItem(email) == null)
+        {
+            alert("Your E-mail ID is not register");
+        }
+        else
+        {
+            var text_data = localStorage.getItem(emial);
+            var object_data = JSON.parse(text_data);
+            alert(object_data.email);
+        }
+}
+
+// login coding end
