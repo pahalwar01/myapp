@@ -75,7 +75,7 @@ login_frm.onsubmit = function()
         }
         else
         {
-            var text_data = localStorage.getItem(emial);
+            var text_data = localStorage.getItem(email);
             var object_data = JSON.parse(text_data);
             alert(object_data.email);
         }
