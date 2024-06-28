@@ -38,8 +38,8 @@
     border-bottom: 1px solid #ccc;
     padding: 10px;
     padding-left: 3px;
-    margin: 20px;
-    width: 85%;
+    margin-top: 20px;
+    width: 100%;
     font-size: 15px;
     font-family: 'Ubuntu',sans-serif;
     outline: none;
@@ -47,7 +47,11 @@
 }
 
 #login_frm{
-    margin-top: 50px;
+    margin-top: 30px;
+}
+
+#signup_frm{
+    margin-top: 10px;
 }
 
 #login_btn,#signup_btn{
@@ -62,7 +66,7 @@
     font-family: 'Ubuntu',sans-serif;
     outline: none;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 #login p,#signup p{
@@ -75,4 +79,11 @@
 #login span,#signup span{
     color: blue;
     cursor: pointer;
+}
+
+#email_notice ,#email_warning ,#password_warning{
+    font-family: 'Ubuntu',sans-serif;
+    color: red;
+    margin-top: 3px;
+    display: none;
 }
