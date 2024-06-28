@@ -66,19 +66,21 @@ var login_frm = document.getElementById("login_frm");
 
 login_frm.onsubmit = function()
 {
-    var email =document.getElementById("login_uname").value;
-    var password = document.getElementById("login_pwd").value;
+    var email =document.getElementById("login_uname");
+    var password = document.getElementById("login_pwd");
 
-    if(localStorage.getItem(email) == null)
+    if(localStorage.getItem(email.value) == null)
         {
             alert("Your E-mail ID is not register");
         }
         else
         {
-            var text_data = localStorage.getItem(email);
+            var text_data = localStorage.getItem(email.value);
             var object_data = JSON.parse(text_data);
-            alert(object_data.email);
+            var correct_email = object_data.email;
+            var correct_password = object_data.password;
         }
+        return false;
 }
 
 // login coding end
