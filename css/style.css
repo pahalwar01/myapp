@@ -80,3 +80,9 @@
     color: blue;
     cursor: pointer;
 }
+
+#email_notice, #email_warning ,#password_warning{
+    font-family: 'Ubuntu',sans-serif;
+    color: red;
+    display: none;
+}
