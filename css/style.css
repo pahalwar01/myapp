@@ -80,10 +80,3 @@
     color: blue;
     cursor: pointer;
 }
-
-#email_notice{
-    font-family: 'Ubuntu',sans-serif;
-    color: red;
-    margin-top: 3px;
-    display: none;
-}
