@@ -4,10 +4,10 @@ var signup_frm = document.getElementById("signup_frm");
 
 signup_frm.onsubmit = function()
 {
-    var user = document.getElementById("username").value;
-    var email = document.getElementById("email").value;
-    var phone = document.getElementById("phone").value;
-    var pass = document.getElementById("password").value;
+    var user = btoa(document.getElementById("username").value);
+    var email = btoa(document.getElementById("email").value);
+    var phone = btoa(document.getElementById("phone").value);
+    var pass = btoa(document.getElementById("password").value);
 
     var user_object_data = {username:user,email:email,phone:phone,password:pass};
     var user_text_data = JSON.stringify(user_object_data);
@@ -68,10 +68,20 @@ login_frm.onsubmit = function()
 {
     var email =document.getElementById("login_uname");
     var password = document.getElementById("login_pwd");
+    var email_war = document.getElementById("email_warning");
+    var pass_war = document.getElementById("password_warning");
 
     if(localStorage.getItem(email.value) == null)
         {
-            alert("Your E-mail ID is not register");
+            email_war.style.display = "block";
+            email.style.borderBottomColor = "red";
+
+            email.onclick = function()
+            {
+                email.value = "";
+                email_war.style.display = "none";
+                email.style.borderBottomColor = "#ccc";
+            }
         }
         else
         {
@@ -84,11 +94,19 @@ login_frm.onsubmit = function()
                 {
                     if(password.value == correct_password)
                         {
-                            alert("Login Sucess")
+                            alert("login sucess");
                         }
                         else
                         {
-                            alert("Password Wrong")
+                            pass_war.style.display = "block";
+                            password.style.borderBottomColor = "red";
+
+                            password.onclick = function()
+                            {
+                                password.value = "";
+                                pass_war.style.display = "none";
+                                password.style.borderBottomColor = "#ccc";
+                            }
                         }
                 }
         }
