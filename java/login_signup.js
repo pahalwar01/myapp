@@ -4,10 +4,10 @@ var signup_frm = document.getElementById("signup_frm");
 
 signup_frm.onsubmit = function()
 {
-    var user = btoa(document.getElementById("username").value);
-    var email = btoa(document.getElementById("email").value);
-    var phone = btoa(document.getElementById("phone").value);
-    var pass = btoa(document.getElementById("password").value);
+    var user = document.getElementById("username").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var pass = document.getElementById("password").value;
 
     var user_object_data = {username:user,email:email,phone:phone,password:pass};
     var user_text_data = JSON.stringify(user_object_data);
@@ -66,51 +66,19 @@ var login_frm = document.getElementById("login_frm");
 
 login_frm.onsubmit = function()
 {
-    var email =document.getElementById("login_uname");
-    var password = document.getElementById("login_pwd");
-    var email_war = document.getElementById("email_warning");
-    var password_war = document.getElementById("password_warning");
+    var email =document.getElementById("login_uname").value;
+    var password = document.getElementById("login_pwd").value;
 
-    if(localStorage.getItem(email.value) == null)
+    if(localStorage.getItem(email) == null)
         {
-            email_war.style.display = "block";
-            email.style.borderBottomColor = "red";
-
-            email.onclick = function()
-            {
-                email.value = "";
-                email_war.style.display = "none";
-                email.style.borderBottomColor = "#ccc"
-            }
+            alert("Your E-mail ID is not register");
         }
         else
         {
-            var text_data = localStorage.getItem(email.value);
+            var text_data = localStorage.getItem(email);
             var object_data = JSON.parse(text_data);
-            var correct_email = object_data.email;
-            var correct_password = object_data.password;
-
-            if(email.value == correct_email)
-                {
-                    if(password.value == correct_password)
-                        {
-                            alert("Login Sucessful");
-                        }
-                    else
-                    {
-                        password_war.style.display = "block";
-                        password_war.style.borderBottomColor = "red";
-
-                        password.onclick = function()
-                        {
-                            password.value = "";
-                            password_war.style.display = "none";
-                            password_war.style.borderBottomColor = "#ccc";
-                        }
-                    }
-                }
+            alert(object_data.email);
         }
-return false;
 }
 
 // login coding end

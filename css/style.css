@@ -81,7 +81,7 @@
     cursor: pointer;
 }
 
-#email_notice ,#email_warning ,#password_warning{
+#email_notice{
     font-family: 'Ubuntu',sans-serif;
     color: red;
     margin-top: 3px;
