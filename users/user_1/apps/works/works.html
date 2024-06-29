@@ -19,7 +19,7 @@
                 <img src="../../../../img/logo.png" alt="logo" id="logo">
             </div>
             
-            <h1 align ="center" id="profile_name"></h1>
+            <h1 align ="center" id="view_jobs"></h1>
             
         </header>    
     </div>
@@ -29,20 +29,38 @@
     <div class="row">
         <nav class="col-12">
             <ul>
-                <li class="col-4"><a href="user_1.html"><i class="fas fa-home"></i> Home</a></li>
-                <li class="col-4"><a href="#"><i class="fas fa-list"></i> Jobs View</a></li>
-                <li class="col-4" id="logout"><a href="#"><p id="logout_text"><i class="fa-solid fa-right-from-bracket"></i> Logout </p></a></li>
+                <li class="col-6"><a href="user_1.html"><i class="fas fa-arrow-left"></i> Back</a></li>
+                <li class="col-6"><a href="#"><i class="fas fa-list"></i> Jobs View</a></li>
             </ul>
             
         </nav>
     </div>
     <!--Navigation coding end-->
     
+    <i class="fas fa-plus-circle" id="addwork"></i>
 
 
-
-
-
+    <div id="jobs_bg">
+        <div id="add_job">
+            <h1>Add New Job</h1>
+            <form>
+                <input type="text" placeholder="Rider Name" id="r_name">
+                <p id="add">Sender Name</p>
+                <input type="text" placeholder="Sender Name" id="s_name">
+                <p id="add">Date</p>
+                <Input type="date" placeholder="Date" id="date">
+                <p id="add">Type Of Work</p>
+                <input type="text" placeholder="Work Type" id="work_type">
+                <p id="add">From:-</p>
+                <input type="text" placeholder="From" id="frm">
+                <p id="add">To:-</p>
+                <input type="text" placeholder="To" id="to">
+                <p id="add">Total K.M.</p>
+                <input type="number" placeholder="Total K.M." id="total_km">
+                <input type="submit" name="Submit" id="submit">
+            </form>
+        </div>
+    </div>
 
 <script src="js/works.js"></script>
 </body>
