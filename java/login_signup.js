@@ -94,7 +94,8 @@ login_frm.onsubmit = function()
                 {
                     if(btoa(password.value) == correct_password)
                         {
-                            alert("login sucess");
+                            sessionStorage.setItem("user",btoa(email.value));
+                            location.replace("users/user_1/user_1.html");
                         }
                         else
                         {
