@@ -110,3 +110,60 @@ li{
     padding-top: 13px;
     height: 50px;
 }
+
+#addwork{
+    font-size: 40px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    color: purple;
+}
+
+#jobs_bg{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#add_job{
+    width: 35%;
+    height: auto;
+    background-color: white;
+    box-shadow: 0px 0px 10px #ccc;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+#add_job h1{
+    text-align: center;
+    color: purple;
+    font-family: 'Ubuntu' , sans-serif;
+}
+
+#r_name ,#s_name ,#date ,#work_type ,#frm ,#to ,#total_km{
+    width: 100%;
+    padding: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+    border: none;
+    border: 1px solid purple;
+    border-left: 5px solid purple;
+}
+
+#add{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#submit{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    color: white;
+    background-color: purple;
+}
