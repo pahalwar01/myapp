@@ -126,15 +126,17 @@ li{
     position: absolute;
     top: 0;
     left: 0;
+    display: none;
 }
 
 #add_job{
-    width: 35%;
+    width: 75%;
     height: auto;
     background-color: white;
     box-shadow: 0px 0px 10px #ccc;
     border-radius: 15px;
     padding: 10px;
+    margin-top: 30px;
 }
 
 #add_job h1{
@@ -151,6 +153,7 @@ li{
     border: none;
     border: 1px solid purple;
     border-left: 5px solid purple;
+    outline: none;
 }
 
 #add{
@@ -159,11 +162,12 @@ li{
     margin-top: 10px;
 }
 
-#submit{
+#submit_btn ,#close_btn{
     font-family: 'Ubuntu', sans-serif;
     font-size: 20px;
     padding: 5px 10px;
-    margin-top: 10px;
+    margin-top: 15px;
     color: white;
     background-color: purple;
+    margin-bottom: 10px;
 }
