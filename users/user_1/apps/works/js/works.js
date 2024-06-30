@@ -6,3 +6,11 @@ window.onload = function(){
             
             profile_name.innerHTML = "Welcome " + atob(obj_data.username);
 }
+
+var add_item = document.getElementById("addwork");
+
+add_item.onclick = function()
+{
+    var bg = document.getElementById("jobs_bg");
+    bg.style.display = "block";
+}
