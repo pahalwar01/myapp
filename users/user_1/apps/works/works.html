@@ -37,11 +37,12 @@
     </div>
     <!--Navigation coding end-->
     
-    <i class="fas fa-plus-circle" id="addwork"></i>
+    <a href="#"><i class="fas fa-plus-circle" id="addwork"></i></a>
 
 
-    <div id="jobs_bg">
-        <div id="add_job">
+    <div id="jobs_bg" class="animate__animated animate__fadeIn">
+        <center>
+        <div id="add_job" class="animate__animated animate__slideInDown">
             <h1>Add New Job</h1>
             <form>
                 <input type="text" placeholder="Rider Name" id="r_name">
@@ -57,9 +58,11 @@
                 <input type="text" placeholder="To" id="to">
                 <p id="add">Total K.M.</p>
                 <input type="number" placeholder="Total K.M." id="total_km">
-                <input type="submit" name="Submit" id="submit">
+                <button id="submit_btn">Submit</button>
+                <button id="close_btn">Close</button>
             </form>
         </div>
+        </center>
     </div>
 
 <script src="js/works.js"></script>
