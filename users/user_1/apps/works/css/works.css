@@ -111,6 +111,15 @@ li{
     height: 50px;
 }
 
+.marquee-text{
+    background-color: #bf00ff;
+    margin-top: -3px;
+}
+
+#dharampal ,#karan ,#lalit{
+    display: none;
+}
+
 #addwork{
     font-size: 40px;
     position: fixed;
