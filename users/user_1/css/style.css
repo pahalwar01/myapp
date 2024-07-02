@@ -111,6 +111,10 @@ li{
     height: 50px;
 }
 
+#dharampal_details ,#karan_details ,#lalit_details{
+    display: none;
+}
+
 section{
     height: fit-content;
     background: rgb(127,0,255);
