@@ -66,5 +66,17 @@
     </div>
 
 <script src="js/works.js"></script>
+<script>
+    var user = document.getElementById("add_job")
+    user.onclick = function (){
+        var user_email = sessionStorage.getItem("user");
+            var json_data = localStorage.getItem(user_email);
+            var obj_data = JSON.parse(json_data);
+            var profile_name = document.getElementById("profile_name");
+            var rider = document.getElementById("r_name");
+            
+            rider.innerHTML = atob(obj_data.username);
+    }
+</script>
 </body>
 </html>
