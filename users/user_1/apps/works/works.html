@@ -29,7 +29,7 @@
     <div class="row">
         <nav class="col-12">
             <ul>
-                <li class="col-6"><a href="user_1.html"><i class="fas fa-arrow-left"></i> Back</a></li>
+                <li class="col-6"><a href="../../user_1.html"><i class="fas fa-arrow-left"></i> Back</a></li>
                 <li class="col-6"><a href="#"><i class="fas fa-list"></i> Jobs View</a></li>
             </ul>
             
@@ -45,19 +45,19 @@
         <div id="add_job" class="animate__animated animate__slideInDown">
             <h1>Add New Job</h1>
             <form>
-                <input type="text" placeholder="Rider Name" id="r_name">
+                <input type="text" id="r_name" required="required">
                 <p id="add">Sender Name</p>
-                <input type="text" placeholder="Sender Name" id="s_name">
+                <input type="text" placeholder="Sender Name" id="s_name" required="required">
                 <p id="add">Date</p>
-                <Input type="date" placeholder="Date" id="date">
+                <Input type="date" placeholder="Date" id="date" required="required">
                 <p id="add">Type Of Work</p>
-                <input type="text" placeholder="Work Type" id="work_type">
+                <input type="text" placeholder="Work Type" id="work_type" required="required">
                 <p id="add">From:-</p>
-                <input type="text" placeholder="From" id="frm">
+                <input type="text" placeholder="From" id="frm" required="required">
                 <p id="add">To:-</p>
-                <input type="text" placeholder="To" id="to">
+                <input type="text" placeholder="To" id="to" required="required">
                 <p id="add">Total K.M.</p>
-                <input type="number" placeholder="Total K.M." id="total_km">
+                <input type="number" placeholder="Total K.M." id="total_km" required="required">
                 <button id="submit_btn">Submit</button>
                 <button id="close_btn">Close</button>
             </form>
@@ -66,17 +66,7 @@
     </div>
 
 <script src="js/works.js"></script>
-<script>
-    var user = document.getElementById("add_job")
-    user.onclick = function (){
-        var user_email = sessionStorage.getItem("user");
-            var json_data = localStorage.getItem(user_email);
-            var obj_data = JSON.parse(json_data);
-            var profile_name = document.getElementById("profile_name");
-            var rider = document.getElementById("r_name");
-            
-            rider.innerHTML = atob(obj_data.username);
-    }
-</script>
+
+
 </body>
 </html>
