@@ -9,7 +9,9 @@ window.onload = function(){
             var json_data = localStorage.getItem(user_email);
             var obj_data = JSON.parse(json_data);
             var profile_name = document.getElementById("profile_name");
+            var rider_details = document.getElementById("rider_details");
             
+            rider_details.innerHTML = atob(obj_data.username) + "'s Total Conveyance Details"
             profile_name.innerHTML = "Welcome " + atob(obj_data.username);
         }
 }
