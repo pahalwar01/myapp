@@ -29,6 +29,7 @@ signup_frm.onsubmit = function()
 }
 //signup coding end
 
+
 // email validation coding start
 var email_input = document.getElementById("email");
 email_input.onchange = function()
@@ -59,6 +60,8 @@ email_input.onchange = function()
 }
 
 // email validation coding end
+
+
 
 // login coding start
 
@@ -115,3 +118,5 @@ login_frm.onsubmit = function()
 }
 
 // login coding end
+
+
