@@ -13,7 +13,7 @@ signup_frm.onsubmit = function()
     var user_text_data = JSON.stringify(user_object_data);
 
     if (user != "" && email != "" && phone != "" && pass !="")
-        {
+        {   
             localStorage.setItem(email,user_text_data);
             var signup_btn = document.getElementById("signup_btn");
             signup_btn.style.background = "#14b129";
@@ -27,6 +27,8 @@ signup_frm.onsubmit = function()
         }
 
 }
+
+
 //signup coding end
 
 
