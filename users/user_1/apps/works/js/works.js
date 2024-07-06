@@ -37,3 +37,8 @@ add_item.onclick = function()
     
 }
 
+var close = document.getElementById("close_btn");
+close.onclick = function()
+{
+    window.location.replace("works.html");
+}
