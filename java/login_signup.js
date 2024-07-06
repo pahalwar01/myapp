@@ -22,7 +22,7 @@ signup_frm.onsubmit = function()
                 signup_btn.style.background = "linear-gradient(to right, #E100FF, #7F00FF)";
                 signup_btn.innerHTML = "Sign up";
                 signup_frm.reset();
-            }, 3000);
+            }, 1000);
             return false
         }
 
