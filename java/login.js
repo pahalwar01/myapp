@@ -1,8 +1,4 @@
 
-
-// email validation coding end
-
-
 /*
 // login coding start
 
