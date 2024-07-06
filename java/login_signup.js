@@ -33,6 +33,7 @@ signup_frm.onsubmit = function()
 
 
 // email validation coding start
+
 var email_input = document.getElementById("email");
 email_input.onchange = function()
 {
