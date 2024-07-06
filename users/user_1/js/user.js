@@ -1,5 +1,12 @@
 window.onload = function(){
-    if(sessionStorage.getItem("user") == null)
+    var user = document.getElementById("login_uname").value;
+    var pass = document.getElementById("login_pwd").value;
+    var admin = user =="admin" && pass =="admin@123"? "login sucess":"Failed";
+    var first = user=="Dharampal" && pass=="dharampal@123"? "login sucess":"Failed";
+    var second = user=="Lalit" && pass=="lalit@123"? "login sucess":"Failed";
+    var third = user=="Karan" && pass=="karan@123"? "login sucess":"Failed";
+
+    if(user != admin , first , second , third )
         {
             window.location.replace("../../index.html");
         }
