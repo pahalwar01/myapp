@@ -1,32 +1,4 @@
-// email validation coding start
 
-var email_input = document.getElementById("email");
-email_input.onchange = function()
-{
-    var email = btoa(document.getElementById("email").value);
-    var warning = document.getElementById("email_notice");
-    var signup_btn = document.getElementById("signup_btn");
- 
-    if (localStorage.getItem(email) != null)
-        {
-            warning.style.display = "block";
-            email_input.style.borderBottomColor = "red";
-            signup_btn.disabled = true;
-            signup_btn.style.background = "#ccc";
-
-            email_input.onclick = function()
-            {
-                email_input.value = "";
-                email_input.style.borderBottomColor = "#ccc";
-                warning.style.display = "none";
-                signup_btn.disabled = false;
-                signup_btn.style.background = "linear-gradient(to right, #E100FF, #7F00FF)";
-
-            }
-
-        }
-
-}
 
 // email validation coding end
 
@@ -89,26 +61,51 @@ login_frm.onsubmit = function()
 // login coding end
 */
 
+
+
 var login_frm = document.getElementById("login_frm");
+
 login_frm.onsubmit = function()
 {
-    var user = document.getElementById("username").value;
-    var pass = document.getElementById("password").value;
+    var user = document.getElementById("login_uname").value;
+    var pass = document.getElementById("login_pwd").value;
     var admin = user =="admin" && pass =="admin@123"? "login sucess":"Failed";
-    var first = user=="dharampal" && pass=="dharampal@123"? "login sucess": "Failed";
-    var second = user=="lalit" && pass=="lalit@123"? "login sucess": "Failed";
-    var third = user=="karan" && pass=="karan@123"? "login sucess": "Failed";
-    if (admin && first && second && third =="login sucess") {
-        window.location.href(users/user_1/user_1.html)
+    var first = user=="Dharampal" && pass=="dharampal@123"? "login sucess":"Failed";
+    var second = user=="Lalit" && pass=="lalit@123"? "login sucess":"Failed";
+    var third = user=="Karan" && pass=="karan@123"? "login sucess":"Failed";
+    if (admin=="login sucess") {
+        window.location.href='users/user_1/user_1.html';
+    } 
+    if (first=="login sucess") {
+        window.location.href='users/user_1/user_1.html';
+    } 
+    if (second=="login sucess") {
+        window.location.href='users/user_1/user_1.html';
+    } 
+    if (third=="login sucess") {
+        window.location.href='users/user_1/user_1.html';
     }
-   
+
     return false;
 }
 
-//Logout Code
-var logout = document.getElementById("logout");
-logout.onclick = function()
-{
-    sessionStorage.clear();
-    
-}
+/*
+    var user = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
+    var admin = user =="admin" && pass =="admin@123";
+    var first = user=="dharampal" && pass=="dharampal@123";
+    var second = user=="lalit" && pass=="lalit@123";
+    var third = user=="karan" && pass=="karan@123";
+    if (admin=="login sucess") {
+        window.location.href='user/user_1/user_1.html';
+    } 
+    if (first=="login sucess") {
+        window.location.href='dharampalmain.html';
+    } 
+    if (second=="login sucess") {
+        window.location.href='lalitmain.html';
+    } 
+    if (third=="login sucess") {
+        window.location.href='karanmain.html';
+    }
+    */
