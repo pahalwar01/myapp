@@ -63,7 +63,7 @@
         <center>
         <div id="add_job" class="animate__animated animate__slideInDown">
             <h1>Add New Job</h1>
-            <form>
+            <form id="add_work" name="submit-to-google-sheet">
                 <input type="text" id="r_name" required="required">
                 <p id="add">Sender Name</p>
                 <input type="text" placeholder="Sender Name" id="s_name" required="required">
@@ -78,7 +78,8 @@
                 <p id="add">Total K.M.</p>
                 <input type="number" placeholder="Total K.M." id="total_km" required="required">
                 <button id="submit_btn">Submit</button>
-                <button id="close_btn">Close</button>
+                <button id="close_btn">Close</button><br>
+                <span id="success"></span>
             </form>
         </div>
         </center>
@@ -87,6 +88,35 @@
     <!--section coding end-->
 <script src="js/works.js"></script>
 
+<!--Submit process coding Start-->
+    
+<script>
+    var submit_btn = document.getElementById("submit_btn");
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbydkPC0-s6ky0GdcqPwfEPpBAUFgXQ6pzq6_6tPhSL48xBr5ifD3ASgz6B58y-HoItO1A/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const success = document.getElementById("success");
+    var redirect_page = document.getElementById("jobs_bg");
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            success.innerHTML="Data Successfully Submited";
+
+            setTimeout(function()
+            {
+                success.innerHTML="";
+            },4000)
+            form.reset();
+            window.location.replace("works.html");
+            redirect_page.style.display = "none";
+            
+        })
+        .catch(error => console.error('Error!', error.message))
+        })
+       
+</script>
+
+<!--Submit process coding end-->
 
 </body>
 </html>
