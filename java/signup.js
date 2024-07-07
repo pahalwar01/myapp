@@ -1,3 +1,5 @@
+// Signup coding start---
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
@@ -49,3 +51,47 @@ signup.addEventListener("click", function (event) {
   });
 
 })
+
+// Signup coding end---
+
+
+
+// login coding start---
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+// TODO: Add SDKs for Firebase products that you want to use
+
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+
+const login = document.getElementById('login_btn');
+login.addEventListener("click", function (event) {
+  event.preventDefault()
+  
+  // inputs
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  // submit button
+
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    alert("Signing In...");
+    window.location.href = "users/user_1/user_1.html";
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage)
+    // ..
+  });
+
+})
+
+
+// login coding end---
