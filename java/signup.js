@@ -21,9 +21,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
-const name = document.getElementById('username').value;
 const email = document.getElementById('email').value;
-const phone = document.getElementById('phone').value;
 const password = document.getElementById('password').value;
 
 const signup = document.getElementById('signup_btn');
