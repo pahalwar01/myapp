@@ -12,38 +12,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-      <!-- Add Firebase SDK -->
-       
-  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
-
-  <script>
-    // Initialize Firebase with your project's config
-    var firebaseConfig = {
-        apiKey: "AIzaSyDXIbUIbKYmKVPUtfrzCPAxLb2t4r_Jlww",
-        authDomain: "account-f83b4.firebaseapp.com",
-        projectId: "account-f83b4",
-        storageBucket: "account-f83b4.appspot.com",
-        messagingSenderId: "374695878902",
-        appId: "1:374695878902:web:72ea054fbd780f98650cd7",
-        measurementId: "G-D0XY2VX61J"
-    };
-    firebase.initializeApp(firebaseConfig);
-
-    // Function to check if a user is logged in or not
-    function checkAuthState() {
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (!user) {
-          // User is not signed in, redirect to the login page
-          window.location.href("index.html");
-        }
-      });
-    }
-  </script>
+    
 
 </head>
-<body onload="checkAuthState()">
+<body>
     <!--header coding start-->
     <div class="row">
         <header class="col-12">
