@@ -17,7 +17,7 @@ window.onload = function()
 
             
             rider_details.innerHTML = atob(obj_data.username) + "'s Total Conveyance Details"
-            profile_name.innerHTML = "Welcome " + atob(obj_data.username);
+            profile_name.innerHTML = "Welcome ";
             
             if(atob(obj_data.username)==("Dharampal"))
             {
