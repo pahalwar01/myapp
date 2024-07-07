@@ -27,5 +27,5 @@ const password = document.getElementById('password').value;
 const signup = document.getElementById('signup_btn');
 signup.addEventListener("click", function (event) {
   event.preventDefault()
-  alert(5);
+  alert(5)
 })
