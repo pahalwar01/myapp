@@ -26,9 +26,11 @@ const auth = getAuth(app);
 const signup = document.getElementById('signup_btn');
 signup.addEventListener("click", function (event) {
   event.preventDefault()
+  
   // inputs
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
+  // submit button
 
   createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
