@@ -26,7 +26,7 @@ const auth = getAuth(app);
 const signup = document.getElementById('signup_btn');
 signup.addEventListener("click", function (event) {
   event.preventDefault()
-  
+
   // inputs
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
@@ -36,7 +36,9 @@ signup.addEventListener("click", function (event) {
   .then((userCredential) => {
     // Signed up 
     const user = userCredential.user;
-    alert("Creating account...")
+    alert("Creating account...");
+    window.location = window.location.href;
+    
     // ...
   })
   .catch((error) => {
