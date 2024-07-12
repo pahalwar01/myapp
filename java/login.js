@@ -66,6 +66,7 @@ loginBtn.addEventListener('click', (e) => {
   firebase.auth().signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
           // Login successful
+          const user = userCredential.user;
           alert("Loging In...")
       })
       .catch((error) => {
