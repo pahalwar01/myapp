@@ -1,4 +1,4 @@
-// login coding start---
+// Login coding start---
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
@@ -21,15 +21,14 @@ const firebaseConfig = {
   measurementId: "G-D0XY2VX61J"
 };
 
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-const login = document.getElementById('login_btn');
-login.addEventListener("click", function (login) {
-  login.preventDefault()
-  
+const signup = document.getElementById('signup_btn');
+signup.addEventListener("click", function (event) {
+  event.preventDefault()
+
   // inputs
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
@@ -37,10 +36,11 @@ login.addEventListener("click", function (login) {
 
   signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    // loging in 
+    // Signed in 
     const user = userCredential.user;
-    alert("Signing In...")
-    window.location.href="users/user_1/user_1.html";
+    alert("Login Successfully..");
+    window.location = "users/user_1/user_1.html";
+    
     // ...
   })
   .catch((error) => {
@@ -52,5 +52,4 @@ login.addEventListener("click", function (login) {
 
 })
 
-
-// login coding end---
+// Login coding end---
