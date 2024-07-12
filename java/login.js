@@ -34,10 +34,10 @@ login.addEventListener("click", function (login) {
   const password = document.getElementById('password').value;
   // submit button
 
-  firebaseConfig.auth().signInWithEmailAndPassword(auth, email, password)
+  signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // loging in 
-    //const user = userCredential.user;
+    const user = userCredential.user;
     alert("Signing In...")
     window.location.href="users/user_1/user_1.html";
     // ...
