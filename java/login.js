@@ -26,8 +26,8 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 const login = document.getElementById('login_btn');
-login.addEventListener("click", function (event) {
-  event.preventDefault()
+login.addEventListener("click", function (login) {
+  login.preventDefault()
   
   // inputs
   const email = document.getElementById('email').value;
