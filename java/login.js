@@ -53,6 +53,8 @@ login.addEventListener("click", function (login) {
 })
 */
 
+const auth = getAuth(firebaseConfig);
+
 const loginForm = document.getElementById('login_frm');
 const emailInput = document.getElementById('login_uname');
 const passwordInput = document.getElementById('login_pwd');
@@ -63,7 +65,7 @@ loginBtn.addEventListener('click', (e) => {
   e.preventDefault();
   const email = emailInput.value;
   const password = passwordInput.value;
-  firebase.auth().signInWithEmailAndPassword(email, password)
+  firebase.auth().signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
           // Login successful
           const user = userCredential.user;
