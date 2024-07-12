@@ -34,7 +34,7 @@ login.addEventListener("click", function (login) {
   const password = document.getElementById('password').value;
   // submit button
 
-  signInWithEmailAndPassword(auth, email, password)
+  firebaseConfig.auth().signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed up 
     //const user = userCredential.user;
