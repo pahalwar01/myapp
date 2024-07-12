@@ -21,7 +21,7 @@ const firebaseConfig = {
   measurementId: "G-D0XY2VX61J"
 };
 
-/*
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -51,30 +51,6 @@ login.addEventListener("click", function (login) {
   });
 
 })
-*/
 
-const auth = getAuth(firebaseConfig);
-
-const loginForm = document.getElementById('login_frm');
-const emailInput = document.getElementById('login_uname');
-const passwordInput = document.getElementById('login_pwd');
-const loginBtn = document.getElementById('login-login_btn');
-
-// Login function
-loginBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  const email = emailInput.value;
-  const password = passwordInput.value;
-  firebase.auth().signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-          // Login successful
-          const user = userCredential.user;
-          alert("Loging In...")
-      })
-      .catch((error) => {
-          // Login failed
-          loginStatus.innerHTML = 'Invalid email or password.';
-      });
-});
 
 // login coding end---
