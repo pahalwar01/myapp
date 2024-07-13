@@ -14,13 +14,19 @@ const firebaseConfig = {
     appId: "1:374695878902:web:72ea054fbd780f98650cd7",
     measurementId: "G-D0XY2VX61J"
   };
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
 
-
+const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 auth.languageCode = 'en';
 const provider = new GoogleAuthProvider();
+const googlelogin = document.getElementById("google_signin");
+
+googlelogin.addEventListener("click", function() {
+    alert(5)
+})
+
+const analytics = getAnalytics(app);
+
 provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 
 provider.setCustomParameters({
