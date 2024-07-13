@@ -33,7 +33,7 @@
     font-family: 'Ubuntu',sans-serif;
 }
 
-#login_uname,#login_pwd,#username,#email,#phone,#password{
+#login_uname,#login_pwd,#fname,#email,#lname,#password{
     border: none;
     border-bottom: 1px solid #ccc;
     padding: 10px;
