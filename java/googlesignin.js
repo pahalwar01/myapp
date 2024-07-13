@@ -101,6 +101,7 @@ loginBtn.addEventListener('click', () => {
             // Signed in 
             const user = userCredential.user;
             console.log(user)
+            window.location.href='users/user_1/user_1.html';
             // ...
         })
         .catch((error) => {
@@ -125,6 +126,7 @@ googleBtns.forEach(btn => {
                 // The signed-in user info.
                 const user = result.user;
                 console.log(user);
+                window.location.href='users/user_1/user_1.html';
                 // IdP data available using getAdditionalUserInfo(result)
                 // ...
             }).catch((error) => {
