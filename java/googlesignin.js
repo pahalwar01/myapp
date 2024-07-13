@@ -22,7 +22,19 @@ const provider = new GoogleAuthProvider();
 const googlelogin = document.getElementById("google_signin");
 
 googlelogin.addEventListener("click", function() {
-    alert(5)
+    signInWithPopup(auth, provider)
+    .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const user = result.user;
+        console.log(user);
+        window.location.href = "users/user_1/user_1.html";
+
+
+    }).catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        
+    });
 })
 
 const analytics = getAnalytics(app);
