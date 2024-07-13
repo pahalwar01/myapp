@@ -49,7 +49,7 @@
         const docRef=doc(db, "users", user.uid);
         setDoc(docRef,userData)
         .then(()=>{
-            window.location.href='users/user_1.user_1.html';
+            window.location = window.location.href;
         })
         .catch((error)=>{
             console.error("error writing document", error);
