@@ -1,6 +1,4 @@
-import { GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+import { getAuth, signInWithRedirect, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
 
@@ -22,12 +20,12 @@ const provider = new GoogleAuthProvider();
 const googlelogin = document.getElementById("google_signin");
 
 googlelogin.addEventListener("click", function() {
-    signInWithPopup(auth, provider)
+    signInWithRedirect (auth, provider)
     .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const user = result.user;
         console.log(user);
-        window.location.href = "users/user_1/user_1.html";
+         
 
 
     }).catch((error) => {
