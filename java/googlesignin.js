@@ -49,8 +49,8 @@ const signInGoogleBtn = document.getElementById('sign-in-with-google-btn')
 const signUpGoogleBtn = document.getElementById('sign-up-with-google-btn')
 const googleBtns = [signInGoogleBtn, signUpGoogleBtn]
 
-const createAccountBtn = document.getElementById('sign-up-btn')
-const loginBtn = document.getElementById('sign-in-btn')
+const createAccountBtn = document.getElementById('signup_btn')
+const loginBtn = document.getElementById('login_btn')
 const logoutBtn = document.getElementById('logout-button')
 
 // Detects state change
