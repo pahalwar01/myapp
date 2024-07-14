@@ -145,7 +145,7 @@ googleBtns.forEach(btn => {
     });
 });
 
-
+/*
 // logout button
 logoutBtn.addEventListener('click', () => {
     signOut(auth).then(() => {
@@ -156,3 +156,4 @@ logoutBtn.addEventListener('click', () => {
       
     console.log('Logout Clicked')
 })
+*/
