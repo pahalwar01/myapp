@@ -7,7 +7,7 @@ var user = email, pass;
 window.onload = function()
 {
     console.log(user);
-    if(console.log.getItem(user) == null)
+    if(localStorage.getItem(user) == null)
         {
             window.location.replace("../../index.html");
         }
@@ -48,8 +48,7 @@ var logout = document.getElementById("logout");
 
 logout.onclick = function()
 {  
-    localStorage.clear();
-    console.log.clear();
+    localStorage.clear()
     sessionStorage.clear();
     var logout_text = document.getElementById("logout_text");
     logout_text.innerHTML = "Please wait...";
