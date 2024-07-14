@@ -96,6 +96,7 @@
 
  //google signin
  const provider = new GoogleAuthProvider();
+ const auth=getAuth();
  signInWithRedirect(auth, provider);
  provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 
