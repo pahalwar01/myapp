@@ -1,6 +1,6 @@
 window.onload = function()
 {
-    if(localStorage.getItem("user") == null)
+    if(localStorage.getItem('loggedInUserId', user.uid) == null)
         {
             window.location.replace("../../index.html");
         }
