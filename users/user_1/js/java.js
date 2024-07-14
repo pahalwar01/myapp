@@ -54,6 +54,7 @@ logout.onclick = function()
     var logout_text = document.getElementById("logout_text");
     logout_text.innerHTML = "Please wait...";
     setTimeout(function(){window.location = "../../index.html"},2000);
+    window.close;
 }
 
 // Logout coding end
