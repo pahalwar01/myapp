@@ -77,7 +77,7 @@ onAuthStateChanged(auth, (user) => {
 // Event Listeners for Buttons
 // Click on Create Account Button
 createAccountBtn.addEventListener('click', () => {
-    createUserWithEmailAndPassword(auth, firsNameSignUpForm.value, lastNameSignUpForm.value, emailSignUpForm.value, passwordSignUpForm.value)
+    createUserWithEmailAndPassword(auth, emailSignUpForm.value, passwordSignUpForm.value)
         .then((userCredential) => {
             // Signed up 
             const user = userCredential.user;
@@ -91,8 +91,6 @@ createAccountBtn.addEventListener('click', () => {
             // ..
         });
     console.log('Create Account Button Clicked')
-    console.log(`First Name: ${firsNameSignUpForm.value}`)
-    console.log(`Last Name: ${lastNameSignUpForm.value}`)
     console.log(`Email: ${emailSignUpForm.value}`)
     console.log(`Password: ${passwordSignUpForm.value}`)
 })
