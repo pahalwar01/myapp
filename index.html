@@ -13,116 +13,71 @@
     
 </head>
 <body>
-    <main>
-        <h1>Welcome to Rohit!</h1>
-        <div class="content-container">
-            <!-- Section for logged-out view -->
-            <section id="logged-out-view">
-                <div class="auth-page_container">
-                    <div class="form-container">
-                        <!-- Toggle buttons for sign in and sign up forms -->
-                        <div class="toggle-container">
-                            <div id="signin-toggle-btn" class="auth-toggle-signin">Login</div>
-                            <div id="signup-toggle-btn" class="auth-toggle-signup">Sign Up</div>
-                        </div>
-                        <!-- Sign in form -->
-                        <div id="signin-form" class="login-form-container">
-                            <div class="login-form">
-                                <h2>Login</h2>
-                                <div class="input-group">
-                                    <input type="email" id="signin-email-input" name="email" placeholder="Email" required>
-                                    <div id="email-error-message" class="error-msg"></div>
-                                </div>
-                                <div class="input-group">
-                                    <input type="password" id="signin-password-input" name="password" placeholder="Password" required>
-                                    <div id="password-error-message" class="error-msg"></div>
-                                </div>
-                                <div id="sign-in-btn" class="login-btn">Sign In</div>
-                                <div class="alt-signin-divider">OR</div>
-                                <button id="sign-in-with-google-btn" class="google-login-btn">
-                                    <img src="img/google-icon.png" alt="Google Sign-in" class="google-btn-logo"> Sign in with Google
-                                </button>
-                            </div>
-                        </div>
-                        <!-- Sign up form -->
-                        <div id="signup-form" class="login-form-container">
-                            <div class="login-form">
-                                <h2>Sign-Up</h2>
-                                <div class="input-group">
-                                    <input type="email" id="signup-email-input" name="email" placeholder="Email" required>
-                                    <div id="email-error-message" class="error-msg"></div>
-                                </div>
-                                <div class="input-group">
-                                    <input type="password" id="signup-password-input" name="password" placeholder="Password" required>
-                                    <div id="password-error-message" class="error-msg"></div>
-                                </div>
-                                <div id="sign-up-btn" class="login-btn">Create Account</div>
-                                <div class="alt-signin-divider">OR</div>
-                                <button id="sign-up-with-google-btn" class="google-login-btn">
-                                    <img src="img/google-icon.png" alt="Google Sign-in" class="google-btn-logo"> Sign Up with Google
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            
-            <!-- Section for logged-in view 
-            <section id="logged-in-view">
-                <div class="top-section">
-                    <h2 class="greeting">You are logged in as <span id="user-email"></span>.</h2>
-                    <button id="logout-button" class="logout-btn">Logout</button>
-                </div>
-                <div class="msg-container">
-                    <div class="msg-form-group">
-                        <textarea class="msg-input-form" id="msg-input" name="message" placeholder="Type a message and let us know what's on your mind?"></textarea>
-                        <button class="msg-submit-btn" type="submit">Submit</button>
-                    </div>
-                    <div class="msg-list-container">
-                        <h3>MESSAGES</h3>
-                        <hr>
-                        <div class="message">
-                            <div class="user-tag">User: wiresift@gmail.com</div>
-                            <div class="user-msg">I am feeling like I want to build an app today.</div>
-                        </div>
-                        <div class="message">
-                            <div class="user-tag">User: test@gmail.com</div>
-                            <div class="user-msg">I'm super tired. No app building today. Just going to take a nap!</div>
-                        </div>
-                    </div>
-                </div>
-            </section>-->
+    <div id="container">
+        <div id="loginpage">
+            <div id="login" class="animate__animated animate__flipInY">
+                <h1 align ="center">Login</h1>
+                <form id="login_frm" autocomplete="off">
+                    <input type="text" placeholder="User Email" id="login_uname">
+                    <small id="email_warning"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Your Email ID is not Registered</small>
+                    <input type="password" placeholder="Password" id="login_pwd">
+                    <small id="password_warning"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Wrong Password</small>
+                    <button type="submit" id="login_btn">Login</button>
+                    <button id="sign-in-with-google-btn" class="google-login-btn">
+                        <i class="fa-brands fa-google"></i> Sign In with Google
+                    </button>
+                </form>
+                <p>Don't have an account? <span id="signup_link">Sign Up</span><br><br>
+<script>
+    function demo()
+    {
+        var date = new Date();
+        var time = date.toLocaleTimeString();
+        var d = date.toLocaleDateString();
+        document.write(d);
+    }
+    demo();
+    
+</script></p>
+            </div>
+            <div id="signup" class="animate__animated animate__flipInY">
+                <h1 align="center">Sign up</h1>
+                <form id="signup_frm" autocomplete="off">
+                    <input type="name" placeholder="First Name" id="fname" required="required">
+                    <input type="name" placeholder="Last Name" id="lname" required="required">
+                    <small id="email_notice"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Email ID already exist</small>
+                    <input type="email" placeholder="E-mail " id="email" required="required">
+                    <input type="password" placeholder="Password" id="password" required="required">
+                    <button type="submit" id="signup_btn">Sign up</button>
+                    <button id="sign-up-with-google-btn" class="google-login-btn">
+                        <i class="fa-brands fa-google"></i> Sign up with Google
+                    </button>
+                </form>
+                <p>Already have an account? <span id="login_link">Login</span><br><br>
+<script>
+    function demo()
+    {
+        var date = new Date();
+        var time = date.toLocaleTimeString();
+        var d = date.toLocaleDateString();
+        document.write(d);
+    }
+    demo();
+</script></p>
+            </div>
+    
         </div>
-    </main>
 
-    <!-- Script to toggle between signin and signup forms-->
-    <script>
-        const signinToggleBtn = document.getElementById("signin-toggle-btn");
-        const signupToggleBtn = document.getElementById("signup-toggle-btn");
-        const signInFormView = document.getElementById("signin-form");
-        const signUpFormView = document.getElementById("signup-form");
+    </div>
 
-        signinToggleBtn.addEventListener('click', () => {
-            signInFormView.style.display = 'block';
-            signUpFormView.style.display = 'none';
-            signinToggleBtn.style.backgroundColor = 'blue';
-            signinToggleBtn.style.color = 'white';
-            signupToggleBtn.style.backgroundColor = 'lightgrey';
-            signupToggleBtn.style.color = 'black';
-        });
+<!--Start External Javascript coding-->
 
-        signupToggleBtn.addEventListener('click', () => {
-            signInFormView.style.display = 'none';
-            signUpFormView.style.display = 'block';
-            signinToggleBtn.style.backgroundColor = 'lightgrey';
-            signinToggleBtn.style.color = 'black';
-            signupToggleBtn.style.backgroundColor = 'blue';
-            signupToggleBtn.style.color = 'white';
-        });
-    </script>
+<!--<script type="module" src="java/signup.js" defer></script>
+<script type="module" src="java/login.js" defer></script>-->
+<script type="module" src="java/googlesignin.js" defer></script> 
+<script src="java/java.js"></script>
+<!--<script src="java/login_signup.js"></script>-->
 
-    <!-- Import external script -->
-    <script type="module" src="java/googlesignin.js"></script>
+<!--End External Javascript coding-->
 </body>
 </html>
