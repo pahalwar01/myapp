@@ -26,11 +26,11 @@
         messageDiv.style.opacity=0;
     },5000);
  }
- const signUp=document.getElementById('submitSignUp');
+ const signUp=document.getElementById('signup_btn');
  signUp.addEventListener('click', (event)=>{
     event.preventDefault();
-    const email=document.getElementById('rEmail').value;
-    const password=document.getElementById('rPassword').value;
+    const email=document.getElementById('email').value;
+    const password=document.getElementById('password').value;
     const firstName=document.getElementById('fName').value;
     const lastName=document.getElementById('lName').value;
 
