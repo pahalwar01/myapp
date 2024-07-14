@@ -54,6 +54,7 @@ const loginBtn = document.getElementById('login_btn')
 const logoutBtn = document.getElementById('logout-button')
 
 // Detects state change
+/*
 onAuthStateChanged(auth, (user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
@@ -71,7 +72,7 @@ onAuthStateChanged(auth, (user) => {
       loggedOutView.style.display = 'block'
     }
   });
-
+*/
 
 // Event Listeners for Buttons
 // Click on Create Account Button
