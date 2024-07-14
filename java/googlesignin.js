@@ -39,8 +39,6 @@ const emailSignInForm = document.getElementById('signin-email-input')
 const passwordSignInForm = document.getElementById('signin-password-input')
 
 // email and password for signup
-const firsNameSignUpForm = document.getElementById('fname')
-const lastNameSignUpForm = document.getElementById('lname')
 const emailSignUpForm = document.getElementById('signup-email-input')
 const passwordSignUpForm = document.getElementById('signup-password-input')
 
