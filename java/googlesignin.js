@@ -39,8 +39,6 @@ const emailSignInForm = document.getElementById('signin-email-input')
 const passwordSignInForm = document.getElementById('signin-password-input')
 
 // email and password for signup
-const firstNameSignUpForm = document.getElementById('fname')
-const lastNameSignUpForm = document.getElementById('lname')
 const emailSignUpForm = document.getElementById('email')
 const passwordSignUpForm = document.getElementById('password')
 
@@ -77,7 +75,7 @@ onAuthStateChanged(auth, (user) => {
 // Event Listeners for Buttons
 // Click on Create Account Button
 createAccountBtn.addEventListener('click', () => {
-    createUserWithEmailAndPassword(auth, firstNameSignUpForm.value, lastNameSignUpForm.value, emailSignUpForm.value, passwordSignUpForm.value)
+    createUserWithEmailAndPassword(auth, emailSignUpForm.value, passwordSignUpForm.value)
         .then((userCredential) => {
             // Signed up 
             const user = userCredential.user;
@@ -91,8 +89,6 @@ createAccountBtn.addEventListener('click', () => {
             // ..
         });
     console.log('Create Account Button Clicked')
-    console.log(`FirstName: ${firstNameSignUpForm.value}`)
-    console.log(`Email: ${lastNameSignUpForm.value}`)
     console.log(`Email: ${emailSignUpForm.value}`)
     console.log(`Password: ${passwordSignUpForm.value}`)
 })
