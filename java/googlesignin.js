@@ -29,10 +29,9 @@ const auth = getAuth();
 auth.languageCode = 'en'
 const provider = new GoogleAuthProvider();
 
-
 // logged in and logged out sections
 const loggedInView = document.getElementById('logged-in-view')
-const loggedOutView = document.getElementById('logged-out-view')
+const loggedOutView = document.getElementById('container')
 const userEmail = document.getElementById('user-email')
 
 // email and password for signin
@@ -40,6 +39,8 @@ const emailSignInForm = document.getElementById('signin-email-input')
 const passwordSignInForm = document.getElementById('signin-password-input')
 
 // email and password for signup
+const firsNameSignUpForm = document.getElementById('fname')
+const lastNameSignUpForm = document.getElementById('lname')
 const emailSignUpForm = document.getElementById('signup-email-input')
 const passwordSignUpForm = document.getElementById('signup-password-input')
 
@@ -51,7 +52,6 @@ const googleBtns = [signInGoogleBtn, signUpGoogleBtn]
 const createAccountBtn = document.getElementById('sign-up-btn')
 const loginBtn = document.getElementById('sign-in-btn')
 const logoutBtn = document.getElementById('logout-button')
-
 
 // Detects state change
 onAuthStateChanged(auth, (user) => {
@@ -76,7 +76,7 @@ onAuthStateChanged(auth, (user) => {
 // Event Listeners for Buttons
 // Click on Create Account Button
 createAccountBtn.addEventListener('click', () => {
-    createUserWithEmailAndPassword(auth, emailSignUpForm.value, passwordSignUpForm.value)
+    createUserWithEmailAndPassword(auth, firsNameSignUpForm.value, lastNameSignUpForm.value, emailSignUpForm.value, passwordSignUpForm.value)
         .then((userCredential) => {
             // Signed up 
             const user = userCredential.user;
@@ -90,6 +90,8 @@ createAccountBtn.addEventListener('click', () => {
             // ..
         });
     console.log('Create Account Button Clicked')
+    console.log(`First Name: ${firsNameSignUpForm.value}`)
+    console.log(`Last Name: ${lastNameSignUpForm.value}`)
     console.log(`Email: ${emailSignUpForm.value}`)
     console.log(`Password: ${passwordSignUpForm.value}`)
 })
@@ -143,7 +145,6 @@ googleBtns.forEach(btn => {
         console.log('Google Signin Clicked');
     });
 });
-
 
 
 // logout button
