@@ -31,8 +31,8 @@
     event.preventDefault();
     const email=document.getElementById('email').value;
     const password=document.getElementById('password').value;
-    const firstName=document.getElementById('fName').value;
-    const lastName=document.getElementById('lName').value;
+    const firstName=document.getElementById('fname').value;
+    const lastName=document.getElementById('lname').value;
 
     const auth=getAuth();
     const db=getFirestore();
@@ -67,7 +67,7 @@
     })
  });
 
- const signIn=document.getElementById('submitSignIn');
+ const signIn=document.getElementById('login_btn');
  signIn.addEventListener('click', (event)=>{
     event.preventDefault();
     const email=document.getElementById('email').value;
