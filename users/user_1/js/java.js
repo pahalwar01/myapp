@@ -7,7 +7,7 @@ var user = email, pass;
 window.onload = function()
 {
     console.log(user);
-    if(console.log.getItem("user") == null)
+    if(console.log.getItem(user) == null)
         {
             window.location.replace("../../index.html");
         }
