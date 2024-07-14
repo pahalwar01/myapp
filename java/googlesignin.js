@@ -39,8 +39,10 @@ const emailSignInForm = document.getElementById('signin-email-input')
 const passwordSignInForm = document.getElementById('signin-password-input')
 
 // email and password for signup
-const emailSignUpForm = document.getElementById('signup-email-input')
-const passwordSignUpForm = document.getElementById('signup-password-input')
+const firsNameSignUpForm = document.getElementById('fname')
+const lastNameSignUpForm = document.getElementById('lname')
+const emailSignUpForm = document.getElementById('email')
+const passwordSignUpForm = document.getElementById('password')
 
 // Buttons
 const signInGoogleBtn = document.getElementById('sign-in-with-google-btn')
@@ -52,7 +54,7 @@ const loginBtn = document.getElementById('login_btn')
 const logoutBtn = document.getElementById('logout-button')
 
 // Detects state change
-
+/*
 onAuthStateChanged(auth, (user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
@@ -70,12 +72,12 @@ onAuthStateChanged(auth, (user) => {
       loggedOutView.style.display = 'block'
     }
   });
-
+*/
 
 // Event Listeners for Buttons
 // Click on Create Account Button
 createAccountBtn.addEventListener('click', () => {
-    createUserWithEmailAndPassword(auth, emailSignUpForm.value, passwordSignUpForm.value)
+    createUserWithEmailAndPassword(auth,firsNameSignUpForm.value,lastNameSignUpForm.value, emailSignUpForm.value, passwordSignUpForm.value)
         .then((userCredential) => {
             // Signed up 
             const user = userCredential.user;
