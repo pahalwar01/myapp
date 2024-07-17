@@ -1,12 +1,5 @@
-var email = document.getElementById("login_uname");
-var pass = document.getElementById("login_pwd");
-
-var user = email, pass;
-
-
 window.onload = function()
 {
-    console.log(user);
     if(localStorage.getItem(user) == null)
         {
             window.location.replace("../../index.html");
@@ -53,7 +46,7 @@ logout.onclick = function()
     var logout_text = document.getElementById("logout_text");
     logout_text.innerHTML = "Please wait...";
     setTimeout(function(){window.location = "../../index.html"},2000);
-    window.close;
+    this.ariaDisabled.backbtn;
 }
 
 // Logout coding end
