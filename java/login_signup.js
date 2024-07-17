@@ -4,15 +4,15 @@ var signup_frm = document.getElementById("signup_frm");
 
 signup_frm.onsubmit = function()
 {
-    var user = btoa(document.getElementById("username").value);
+    var fname = btoa(document.getElementById("fname").value);
+    var lname = btoa(document.getElementById("lname").value);
     var email = btoa(document.getElementById("email").value);
-    var phone = btoa(document.getElementById("phone").value);
     var pass = btoa(document.getElementById("password").value);
 
-    var user_object_data = {username:user,email:email,phone:phone,password:pass};
+    var user_object_data = {firstname:fname,lastname:lname,email:email,password:pass};
     var user_text_data = JSON.stringify(user_object_data);
 
-    if (user != "" && email != "" && phone != "" && pass !="")
+    if (fname != "" && lname != "" && email != "" && pass !="")
         {   
             localStorage.setItem(email,user_text_data);
             var signup_btn = document.getElementById("signup_btn");
