@@ -4,32 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="374695878902-ua9gr93i6mntr795r335iqh5abe0995h.apps.googleusercontent.com">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script type="module" src="java/googlesignin.js" defer></script>    
+
 </head>
 <body>
     <div id="container">
         <div id="loginpage">
-            <div id="login" class="animate__animated animate__flipInY">
+            <div id="login">
                 <h1 align ="center">Login</h1>
                 <form id="login_frm" autocomplete="off">
-                    <div id="signInMessage" class="messageDiv" style="display:none;"></div>
+                    <!-- <div id="signInMessage" class="messageDiv" style="display:none;"></div>
                     <input type="text" placeholder="User Email" id="login_uname">
                     <small id="email_warning"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Your Email ID is not Registered</small>
                     <input type="password" placeholder="Password" id="login_pwd">
                     <small id="password_warning"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Wrong Password</small>
-                    <button type="submit" id="login_btn">Login</button>
-                    <button id="google_signin" class="google-login-btn">
+                    <button type="submit" id="login_btn">Login</button> -->
+                    <button id="google_signin" class="google-login-btn" type="submit">
                         <i class="fa-brands fa-google"></i> Sign In with Google
                     </button>
                 </form>
-                <p>Don't have an account? <span id="signup_link">Sign Up</span><br><br>
-<script>
+                <!-- <p>Don't have an account? <span id="signup_link">Sign Up</span><br><br> -->
+<!-- <script>
     function demo()
     {
         var date = new Date();
@@ -39,9 +41,9 @@
     }
     demo();
     
-</script></p>
+</script></p> -->
             </div>
-            <div id="signup" class="animate__animated animate__flipInY">
+            <!-- <div id="signup">
                 <h1 align="center">Sign up</h1>
                 <form id="signup_frm" autocomplete="off">
                     <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
@@ -66,7 +68,7 @@
     }
     demo();
 </script></p>
-            </div>
+            </div> -->
     
         </div>
 
@@ -74,10 +76,9 @@
 
 <!--Start External Javascript coding-->
 
-<!--<script type="module" src="java/signup.js" defer></script>
-<script type="module" src="java/login.js" defer></script>--> 
-<script src="java/java.js"></script>
-<!--<script src="java/login_signup.js"></script>-->
+<script type="module" src="java/googlesignin.js"></script>
+
+<!-- <script src="java/java.js"></script> -->
 
 <!--End External Javascript coding-->
 </body>
