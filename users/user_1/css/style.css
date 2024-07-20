@@ -54,28 +54,7 @@
     width: 100%;
 }
 
-/* mobile responsive start*/
-
-@media only screen and (max-width: 576px)
-{
-    header{
-        height: 50px;
-        color: #bf00ff;
-    }
-
-    .col-3{
-        width: 25%;
-    }
-
-    nav{
-        height: 50px;
-        background-color: blue;
-    }    
-}
-
-/* mobile responsive end*/
-
-#logo{    
+#logo{
     float: left;
     height: 50px;
     width: 100px;
@@ -109,10 +88,6 @@ li{
     text-align: center;
     padding-top: 13px;
     height: 50px;
-}
-
-#dharampal_details ,#karan_details ,#lalit_details{
-    display: none;
 }
 
 section{
