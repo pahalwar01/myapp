@@ -3,44 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <meta name="google-signin-client_id" content="374695878902-ua9gr93i6mntr795r335iqh5abe0995h.apps.googleusercontent.com">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <title>My Auth App</title>
 </head>
 <body>
-    <div id="mainloginpage">
-        <div id="loginpage">
-            <div id="login">
-                <h1 align ="center">Login</h1>
-                <form id="login_frm" autocomplete="off">
-                    <button id="google_signin" class="g-signin2" data-onsuccess="onSignIn" type="submit">
-                    </button>
-                </form>
-            </div>
-        </div>
+    <button id="signInButton">Create Account / Sign In</button>
+    <button id="signOutButton">Sign Out</button>
+
+    <div id="message">
+        <p>You have signed in as <span id="userName"></span> with the email <span id="userEmail"></span> </p>
     </div>
 
 
+<script type="module">
+  
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+ 
 
-<!--Start External Javascript coding-->
+  import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+  
+ // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDXIbUIbKYmKVPUtfrzCPAxLb2t4r_Jlww",
+  authDomain: "account-f83b4.firebaseapp.com",
+  databaseURL: "https://account-f83b4-default-rtdb.firebaseio.com",
+  projectId: "account-f83b4",
+  storageBucket: "account-f83b4.appspot.com",
+  messagingSenderId: "374695878902",
+  appId: "1:374695878902:web:72ea054fbd780f98650cd7",
+  measurementId: "G-D0XY2VX61J"
+};
 
-<script src="java/googlesignin.js" defer type="module"></script>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
-    crossorigin="anonymous">
+
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth();
+  const provider = new GoogleAuthProvider()
+
+  const signInButton = document.getElementById("signInButton");
+  const signOutButton = document.getElementById("signOutButton");
+  const message = document.getElementById("message");
+  const userName = document.getElementById("userName");
+  const userEmail = document.getElementById("userEmail");
+
+  signOutButton.style.display = "none";
+  message.style.display = "none";
+
+  const userSignIn = async() => {
+    signInWithPopup(auth, provider)
+    .then((result) => {
+        const user = result.user
+        console.log(user);
+    }).catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message
+    })
+  }
+
+  const userSignOut = async() => {
+    signOut(auth).then(() => {
+        alert("You have signed out successfully!");
+    }).catch((error) => {})
+  }
+
+  onAuthStateChanged(auth, (user) => {
+    if(user) {
+      signOutButton.style.display = "block";
+      message.style.display = "block";
+      userName.innerHTML = user.displayName;
+      userEmail.innerHTML = user.email;
+      location.href = "users/user_1/user_1.html";
+    } 
+    else 
+    {
+      signOutButton.style.display = "none";
+      message.style.display = "none";
+    }
+  })
+
+  signInButton.addEventListener('click', userSignIn);
+  signOutButton.addEventListener('click', userSignOut);
+
+
+
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-<!-- <script src="java/java.js"></script> -->
-
-<!--End External Javascript coding-->
 </body>
 </html>
