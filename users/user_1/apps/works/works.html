@@ -64,7 +64,7 @@
         <div id="add_job" class="animate__animated animate__slideInDown">
             <h1>Add New Job</h1><br>
             <form id="add_work" name="submit-to-google-sheet">
-                <input id="ridername"required="required"></input>
+                <input id="ridername" required="required"></input>
                 <p id="add">Sender Name</p>
                 <input type="text" name="sender" placeholder="Sender Name" id="s_name" required="required">
                 <p id="add">Date</p>
@@ -151,17 +151,17 @@
         userName.innerHTML = user.displayName;
         if(userName.innerHTML == "Rohit kumar"){
             dharampal.style.display = "block";
-            rider_name.value = "Rohit kumar";
+            rider_name.value = user.displayName;
         }
         else{
             if(userName.innerHTML == "Mirchi Tasks"){
                 karan.style.display = "block";
-                rider_name.value = "Mirchi Tasks";
+                rider_name.value = user.displayName;
             }
             else{
                 if(userName.innerHTML == "Happykart"){
                 lalit.style.display = "block";
-                rider_name.value = "Happykart";
+                rider_name.value = user.displayName;
                 };
             }
         }
