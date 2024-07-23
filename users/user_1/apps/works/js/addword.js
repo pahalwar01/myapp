@@ -13,14 +13,14 @@ var redirect_page = document.getElementById("jobs_bg");
         setTimeout(function()
         {
             success.innerHTML="";
-        },2000)
+        },100)
         form.reset();
         window.location.replace("works.html");
         redirect_page.style.display = "none";
         function autoRefresh() {
             window.location = window.location.href;
             }
-                setInterval('autoRefresh()', 3000);
+                setInterval('autoRefresh()', 100);
         
             })
     .catch(error => console.error('Error!', error.message))
