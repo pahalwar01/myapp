@@ -101,6 +101,7 @@
     const message = document.getElementById("message");
     const userName = document.getElementById("profile_name");
     const userEmail = document.getElementById("userEmail");
+    const riderdetails = document.getElementById("riderdetails");
     const dharampal = document.getElementById("dharampal_details");
     const karan = document.getElementById("karan_details");
     const lalit = document.getElementById("lalit_details");
@@ -131,9 +132,27 @@
       if(user) {
         signOutButton.style.display = "block";
         // message.style.display = "block";
+        riderdetails.innerHTML = user.displayName;
         userName.innerHTML = user.displayName;
+        if(userName.innerHTML == "Rohit kumar"){
+                dharampal.style.display = "block";
+            }
+            else{
+                if(userName.innerHTML == "Mirchi Tasks"){
+                    karan.style.display = "block";
+                }
+                else{
+                    if(userName.innerHTML == "Happykart"){
+                    lalit.style.display = "block";
+                };
+                }
+            }
+
+
         userEmail.innerHTML = user.email;
         
+        
+
         // location.href = "users/user_1/user_1.html";
         // location.href = "../../index.html";
       } else {
@@ -143,7 +162,12 @@
       }
     })
 
+
+
     
+
+
+
 
     signOutButton.addEventListener('click', userSignOut);
   
