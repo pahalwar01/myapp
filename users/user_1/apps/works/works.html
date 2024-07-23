@@ -19,7 +19,7 @@
                 <img src="../../../../img/logo.png" alt="logo" id="logo">
             </div>
             
-            <h1 align ="center" id="view_jobs"></h1>
+            <h2><center style="height: 50px; text-align: center; color: red;"><span id="profile_name"></span></center></h2>
             
         </header>    
     </div>
@@ -43,14 +43,14 @@
         <div class="marquee-bg">
             <marquee behavior="sliding" direction="left" scrollamount="5" class="marquee-text"><i>LIST VIEW OF YOUR TOTAL JOBS DONE IN THIS MONTH, HOPE YOU DONE THIS MONTH A GOOD WORK, SEE YOU IN NEXT MONTH, GOOD LUCK !</i></marquee>
         </div>
-        <div id="dharampal">
+        <div id="dharampal" style="display: none;">
             <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR7woZy9d8HSFhhdTebakHbzs27ZeYZmEpvr85jmyx_d2xb0ddWFGgn8G3-DwZxKHbeRa8nCvCgiGOp/pubhtml?gid=1952733198&amp;single=true&amp;widget=true&amp;headers=false" style="width: 100%; height: 720px;"></iframe>
         </div>
 
-        <div id="karan">
+        <div id="karan" style="display: none;">
             <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR7woZy9d8HSFhhdTebakHbzs27ZeYZmEpvr85jmyx_d2xb0ddWFGgn8G3-DwZxKHbeRa8nCvCgiGOp/pubhtml?gid=380888060&amp;single=true&amp;widget=true&amp;headers=false" style="width: 100%; height: 720px;"></iframe>
         </div>
-        <div id="lalit">
+        <div id="lalit" style="display: none;">
             <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR7woZy9d8HSFhhdTebakHbzs27ZeYZmEpvr85jmyx_d2xb0ddWFGgn8G3-DwZxKHbeRa8nCvCgiGOp/pubhtml?gid=549043537&amp;single=true&amp;widget=true&amp;headers=false" style="width: 100%; height: 720px;"></iframe>
         </div>
 
@@ -62,9 +62,9 @@
     <div id="jobs_bg" class="animate__animated animate__fadeIn">
         <center>
         <div id="add_job" class="animate__animated animate__slideInDown">
-            <h1>Add New Job</h1>
+            <h1>Add New Job</h1><br>
             <form id="add_work" name="submit-to-google-sheet">
-                <input type="text" name="rname" id="r_name" required="required">
+                <input id="ridername" style="height: 50px; text-align: center; color: red;" required="required"></input>
                 <p id="add">Sender Name</p>
                 <input type="text" name="sender" placeholder="Sender Name" id="s_name" required="required">
                 <p id="add">Date</p>
@@ -86,50 +86,16 @@
     </div>
 
     <!--section coding end-->
-    
-<!-- <script src="js/works.js"></script> -->
-
-<!--Submit process coding Start-->
-    
-<script>
-    var submit_btn = document.getElementById("submit_btn");
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbydkPC0-s6ky0GdcqPwfEPpBAUFgXQ6pzq6_6tPhSL48xBr5ifD3ASgz6B58y-HoItO1A/exec'
-    const form = document.forms['submit-to-google-sheet']
-    const success = document.getElementById("success");
-    var redirect_page = document.getElementById("jobs_bg");
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            success.innerHTML="Data Successfully Submited";
-
-            setTimeout(function()
-            {
-                success.innerHTML="";
-            },2000)
-            form.reset();
-            window.location.replace("works.html");
-            redirect_page.style.display = "none";
-            function autoRefresh() {
-                window.location = window.location.href;
-                }
-                    setInterval('autoRefresh()', 3000);
-            
-                })
-        .catch(error => console.error('Error!', error.message))
-        })
-       
-</script>
 
 <script type="module">
-  
+
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-   
-  
+    
+    
     import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
     
-   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
     apiKey: "AIzaSyDXIbUIbKYmKVPUtfrzCPAxLb2t4r_Jlww",
     authDomain: "account-f83b4.firebaseapp.com",
     databaseURL: "https://account-f83b4-default-rtdb.firebaseio.com",
@@ -138,65 +104,92 @@
     messagingSenderId: "374695878902",
     appId: "1:374695878902:web:72ea054fbd780f98650cd7",
     measurementId: "G-D0XY2VX61J"
-  };
-  
-  
-  
+    };
+    
+    
+    
     const app = initializeApp(firebaseConfig);
     const auth = getAuth();
     const provider = new GoogleAuthProvider()
-  
+    
     const signInButton = document.getElementById("signInButton");
     const signOutButton = document.getElementById("logout");
     const message = document.getElementById("message");
     const userName = document.getElementById("profile_name");
+    const rider_name = document.getElementById("ridername");
     const userEmail = document.getElementById("userEmail");
-  
+    const dharampal = document.getElementById("dharampal");
+    const karan = document.getElementById("karan");
+    const lalit = document.getElementById("lalit");
+    
     // signOutButton.style.display = "none";
     // message.style.display = "none";
-  
+    
     const userSignIn = async() => {
-      signInWithPopup(auth, provider)
-      .then((result) => {
-          const user = result.user
-          console.log(user);
-      }).catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message
-      })
+        signInWithPopup(auth, provider)
+        .then((result) => {
+            const user = result.user
+            console.log(user);
+        }).catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message
+        })
     }
-  
+    
     const userSignOut = async() => {
-      signOut(auth).then(() => {
-          alert("You have signed out successfully!");
-          location.href = "../../../../index.html";
-          sessionStorage.clear();
-      }).catch((error) => {})
+        signOut(auth).then(() => {
+            alert("You have signed out successfully!");
+            location.href = "../../../../index.html";
+            sessionStorage.clear();
+        }).catch((error) => {})
     }
-  
+    
     onAuthStateChanged(auth, (user) => {
-      if(user) {
-        signOutButton.style.display = "block";
-        message.style.display = "block";
+        if(user) {
+        // signOutButton.style.display = "block";
+        // message.style.display = "block";
         userName.innerHTML = user.displayName;
+        if(userName.innerHTML == "Rohit kumar"){
+            dharampal.style.display = "block";
+            rider_name.value = "Rohit kumar";
+        }
+        else{
+            if(userName.innerHTML == "Mirchi Tasks"){
+                karan.style.display = "block";
+                rider_name.value = "Mirchi Tasks";
+            }
+            else{
+                if(userName.innerHTML == "Happykart"){
+                lalit.style.display = "block";
+                rider_name.value = "Happykart";
+                };
+            }
+        }
+        
+        
         userEmail.innerHTML = user.email;
+
         // location.href = "users/user_1/user_1.html";
         // location.href = "../../index.html";
-      } else {
+        } 
+        else {
         location.href = "../../../../index.html";
         signOutButton.style.display = "none";
         message.style.display = "none";
-      }
+        }
     })
-  
+
+
+
     signOutButton.addEventListener('click', userSignOut);
-  
-  
-  
-  </script>
+    
+</script>
+    
 
+<script src="js/works.js"></script>
+<script type="module" src="js/addword.js"></script>
+    
 
-<!--Submit process coding end-->
 
 </body>
 </html>
