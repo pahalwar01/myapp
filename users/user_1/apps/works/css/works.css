@@ -116,10 +116,6 @@ li{
     margin-top: -3px;
 }
 
-#dharampal ,#karan ,#lalit{
-    display: none;
-}
-
 #addwork{
     font-size: 40px;
     position: fixed;
@@ -154,7 +150,7 @@ li{
     font-family: 'Ubuntu' , sans-serif;
 }
 
-#r_name ,#s_name ,#date ,#work_type ,#frm ,#to ,#total_km{
+#ridername ,#s_name ,#date ,#work_type ,#frm ,#to ,#total_km{
     width: 100%;
     padding: 10px;
     font-family: 'Ubuntu', sans-serif;
