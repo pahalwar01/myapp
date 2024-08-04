@@ -44,38 +44,46 @@
 
         <div class="row">
             <center>
-                <h2 align ="center" style="height: 50px; text-align: center; color: red;">Your Ride Details <span id="riderdetails"></span></h2>
+                <!-- <h2 align ="center" style="height: 50px; text-align: center; color: red;">Riders Details <span id="riderdetails"></span> Section</h2>
                         <br>
                         <h4>View Section</h4><br>
-                        <div id="dharampal_details" style="display: none;">
+                        <div id="dharampal_details">
                             <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR7woZy9d8HSFhhdTebakHbzs27ZeYZmEpvr85jmyx_d2xb0ddWFGgn8G3-DwZxKHbeRa8nCvCgiGOp/pubhtml?gid=686236904&amp;single=true&amp;widget=true&amp;headers=false" style="width: 230px; height: 200px;"></iframe>
                         </div>
-                        <div id="karan_details" style="display: none;">
+                        <div id="karan_details">
                             <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR7woZy9d8HSFhhdTebakHbzs27ZeYZmEpvr85jmyx_d2xb0ddWFGgn8G3-DwZxKHbeRa8nCvCgiGOp/pubhtml?gid=1269359666&amp;single=true&amp;widget=true&amp;headers=false" style="width: 230px; height: 200px;"></iframe>
                         </div>
-                        <div id="lalit_details" style="display: none;">
+                        <div id="lalit_details">
                             <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR7woZy9d8HSFhhdTebakHbzs27ZeYZmEpvr85jmyx_d2xb0ddWFGgn8G3-DwZxKHbeRa8nCvCgiGOp/pubhtml?gid=1767430356&amp;single=true&amp;widget=true&amp;headers=false" style="width: 230px; height: 200px;"></iframe>
                         </div>
                     <br><br>
                     <hr style="color: red;border-style: dashed; border-width: 2px;"><hr>
-                    <br>
+                    <br> -->
                     <div>
                         <div>
                             <h4>Print Section</h4><br>
+                            <div>
+                                <p style="float: left;">Select Rider</p>
+                                <select name="rider" id="">
+                                    <option value="dharampal">Dharampal</option>
+                                    <option value="karan">Karan</option>
+                                    <option value="lalit">Lalit</option>
+                                </select>
+                            </div><br>
                             <p style="float: left;">Select Month</p>
                             <select name="month" id="month" style="width: 100px;">
-                            <option value="Jan" id="jan">January</option>
-                            <option value="Feb" id="feb">February</option>
-                            <option value="Mar" id="mar">March</option>
-                            <option value="Apr" id="apr">April</option>
-                            <option value="May" id="may">May</option>
-                            <option value="June" id="jun">June</option>
-                            <option value="July" id="jul">July</option>
-                            <option value="Aug" id="aug">August</option>
-                            <option value="Sep" id="sep">September</option>
-                            <option value="Oct" id="oct">October</option>
-                            <option value="Nov" id="nov">November</option>
-                            <option value="Dec" id="dec">December</option>
+                                <option value="Jan" id="jan">January</option>
+                                <option value="Feb" id="feb">February</option>
+                                <option value="Mar" id="mar">March</option>
+                                <option value="Apr" id="apr">April</option>
+                                <option value="May" id="may">May</option>
+                                <option value="June" id="jun">June</option>
+                                <option value="July" id="jul">July</option>
+                                <option value="Aug" id="aug">August</option>
+                                <option value="Sep" id="sep">September</option>
+                                <option value="Oct" id="oct">October</option>
+                                <option value="Nov" id="nov">November</option>
+                                <option value="Dec" id="dec">December</option>
                             </select>
                         </div>
                         <br>
@@ -86,7 +94,7 @@
                             <option value="2025">2025</option>
                             </select>
                         </div><br><br>
-                        <button style="height: 30px; width: 80px; color: red; background-color: yellow;">Print</button>
+                        <button style="height: 30px; width: 80px; color: red; background-color: yellow;">Show</button>
                     </div>    
             </center>
             <br><br><br>
@@ -94,16 +102,7 @@
         
     </section>
 
-<!--
-    <script>
-        function autoRefresh() {
-            window.location = window.location.href;
-        }
-        setInterval('autoRefresh()', 5000);
-    </script>>
--->
-
-<script type="module">
+<!-- <script type="module">
   
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
    
@@ -197,7 +196,8 @@
     signOutButton.addEventListener('click', userSignOut);
   
 
-  </script>
+  </script> -->
 
+  
 </body>
 </html>
