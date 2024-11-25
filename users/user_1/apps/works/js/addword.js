@@ -1,5 +1,6 @@
 // Submit to google sheet 
 var submit_btn = document.getElementById("submit_btn");
+var close_btn = document.getElementById("close_btn");
 const scriptURL = 'https://script.google.com/macros/s/AKfycbydkPC0-s6ky0GdcqPwfEPpBAUFgXQ6pzq6_6tPhSL48xBr5ifD3ASgz6B58y-HoItO1A/exec'
 const form = document.forms['submit-to-google-sheet']
 const success = document.getElementById("success");
@@ -25,5 +26,11 @@ var redirect_page = document.getElementById("jobs_bg");
             })
     .catch(error => console.error('Error!', error.message))
     })
+
+
+    submit_btn.onclick = function(){
+        submit_btn.style.display="none";
+        close_btn.style.display="none";
+    }
 
 // submit to google sheet end
