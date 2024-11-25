@@ -33,7 +33,7 @@
         <nav class="col-12">
             <ul>
                 <li class="col-4"><a href="user_1.html"><i class="fas fa-home"></i> Home</a></li>
-                <li class="col-4"><a href="apps/works/works.html"><i class="fas fa-list"></i> Jobs View</a></li>
+                <li class="col-4" id="jobview"><a href="apps/works/works.html"><i class="fas fa-list"></i> Jobs View</a></li>
                 <li class="col-4" id="logout"><a href="#"><p id="logout_text"><i class="fa-solid fa-right-from-bracket"></i> Logout </p></a></li>
             </ul>
             
@@ -57,6 +57,40 @@
                         <div id="lalit_details" style="display: none;">
                             <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR7woZy9d8HSFhhdTebakHbzs27ZeYZmEpvr85jmyx_d2xb0ddWFGgn8G3-DwZxKHbeRa8nCvCgiGOp/pubhtml?gid=1767430356&amp;single=true&amp;widget=true&amp;headers=false" style="width: 230px; height: 200px;"></iframe>
                         </div>
+                        <div id="admin" style="display: none;">
+                            <div>
+                                <div>
+                                    <p style="float: left;">Select Rider</p>
+                                    <select name="rider" id="">
+                                        <option value="dharampal">Dharampal</option>
+                                        <option value="karan">Karan</option>
+                                        <option value="lalit">Lalit</option>
+                                    </select>
+                                </div><br>
+                                <p style="float: left;">Select Month</p>
+                                <select name="month" id="month" style="width: 100px;">
+                                    <option value="Jan" id="jan">January</option>
+                                    <option value="Feb" id="feb">February</option>
+                                    <option value="Mar" id="mar">March</option>
+                                    <option value="Apr" id="apr">April</option>
+                                    <option value="May" id="may">May</option>
+                                    <option value="June" id="jun">June</option>
+                                    <option value="July" id="jul">July</option>
+                                    <option value="Aug" id="aug">August</option>
+                                    <option value="Sep" id="sep">September</option>
+                                    <option value="Oct" id="oct">October</option>
+                                    <option value="Nov" id="nov">November</option>
+                                    <option value="Dec" id="dec">December</option>
+                                </select>
+                            </div>
+                            <br>
+                            <div>
+                                <p style="float: left;">Select Year</p>
+                                <select name="year" id="year" style="width: 100px;">
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                </select>
+                            </div>
                     <br><br>
                     <hr style="color: red;border-style: dashed; border-width: 2px;"><hr>
                     <br>
@@ -138,6 +172,9 @@
     const dharampal = document.getElementById("dharampal_details");
     const karan = document.getElementById("karan_details");
     const lalit = document.getElementById("lalit_details");
+    const admin = document.getElementById("admin");
+    const jobview = document.getElementById("jobview");
+    const logout = document.getElementById("logout");
     
     // signOutButton.style.display = "none";
     // message.style.display = "none";
@@ -167,7 +204,7 @@
         // message.style.display = "block";
         riderdetails.innerHTML = user.displayName;
         userName.innerHTML = user.displayName;
-        if(userName.innerHTML == "Rohit kumar"){
+        if(userName.innerHTML == "Dharampal"){
                 dharampal.style.display = "block";
             }
             else{
@@ -177,7 +214,14 @@
                 else{
                     if(userName.innerHTML == "Happykart"){
                     lalit.style.display = "block";
-                };
+                    }
+                    else{
+                        if(userName.innerHTML == "Rohit kumar"){
+                            admin.style.display = "block";
+                            jobview.style.display="none";
+                            logout.style.float="right";
+                        }
+                    }
                 }
             }
 
